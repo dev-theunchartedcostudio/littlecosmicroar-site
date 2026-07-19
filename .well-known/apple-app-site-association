@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "S7W7YBHR3C.dev.theunchartedcostudio.heirloom",
+        "paths": ["/memory/*"]
+      }
+    ]
+  }
+}
