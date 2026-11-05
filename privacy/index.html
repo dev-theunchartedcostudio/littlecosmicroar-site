@@ -1,101 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Heirloom by The Uncharted Co.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Heirloom Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for the Heirloom app by The Uncharted Co.">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      color-scheme: light dark;
+      --background: #f8f6f1;
+      --surface: #ffffff;
+      --text: #20242b;
+      --muted: #626a75;
+      --accent: #2f7657;
+      --border: #dcded9;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #10141c;
+        --surface: #171d27;
+        --text: #f4f5f6;
+        --muted: #b6bdc8;
+        --accent: #74bd92;
+        --border: #303846;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #1a1a1a;
-      background: #fafaf9;
-      padding: 40px 20px 80px;
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-    .wrap { max-width: 680px; margin: 0 auto; }
-    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
-    .meta { font-size: 0.85rem; color: #777; margin-bottom: 40px; }
-    h2 {
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #555;
-      margin: 36px 0 8px;
+
+    main {
+      width: min(760px, calc(100% - 32px));
+      margin: 40px auto;
+      padding: clamp(24px, 5vw, 52px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgb(0 0 0 / 8%);
     }
-    h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 48px 0 4px;
-      padding-top: 24px;
-      border-top: 1px solid #e5e5e5;
-    }
-    p { margin-bottom: 12px; }
-    a { color: #5a6bbf; }
-    footer { margin-top: 60px; font-size: 0.8rem; color: #aaa; }
+
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 7vw, 3.25rem); line-height: 1.1; }
+    h2 { margin: 2.2rem 0 0.5rem; font-size: 1.15rem; line-height: 1.35; }
+    p { margin: 0.65rem 0; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .summary { font-size: 1.15rem; }
+    .metadata { color: var(--muted); }
+    a { color: var(--accent); }
+    footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); color: var(--muted); }
   </style>
 </head>
 <body>
-<div class="wrap">
+<main>
+<h1>Heirloom Privacy Policy</h1>
+<p>Effective date: November 5, 2026<br>Developer: The Uncharted Co.</p>
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: June 2025 &nbsp;·&nbsp; Developer: The Uncharted Co.</p>
+<p>Heirloom is designed to help keep your family&#x27;s memories private. Your saved content remains yours.</p>
 
-  <p>Heirloom is designed from the ground up to keep your family's memories private.</p>
+<h2>Storage And Icloud</h2>
+<p>Heirloom stores your journal content on your device. If you enable iCloud synchronization or accept a shared journal, relevant content is also processed and stored through Apple&#x27;s CloudKit service. Private journal content is kept separate from content you choose to share. The Uncharted Co. cannot view private CloudKit journal records through the developer console. This restriction does not apply to the optional developer-accessible records described below.</p>
 
-  <h2>Data We Do Not Collect</h2>
-  <p>The Uncharted Co. does not collect, transmit, or store any personally identifiable information on external servers. We do not use third-party analytics, advertising networks, or tracking frameworks. We do not sell, share, or monetize your data in any form.</p>
+<p>Imported photos, videos, audio, text, links and documents are handled like other saved content. They may be included in private or shared iCloud synchronization and in exports you choose to create. We do not sell your information or use it for advertising or cross-app tracking. We do not use third-party advertising or analytics SDKs.</p>
 
-  <h2>Data Stored on Your Device</h2>
-  <p>All memories, photos, family tree information, growth data, recipes, prompts, and notes are stored locally on your device using Apple's on-device storage frameworks. This data belongs to you and remains under your control at all times.</p>
+<h2>Optional Roadmap And Invitation Records</h2>
 
-  <h2>iCloud / CloudKit Sync</h2>
-  <p>If you choose to enable iCloud sync, your data is synchronized through Apple's CloudKit infrastructure. This sync is governed by Apple's iCloud privacy policy and is encrypted in transit and at rest. The Uncharted Co. does not have access to data stored in your iCloud account.</p>
+<p>If you use Roadmap Voting or submit a feature request, Heirloom sends your votes, priorities, request text and a CloudKit account identifier to a developer-accessible CloudKit database. We use these records for app functionality and to understand feature interest. Do not include private family information in a request. Records are retained while useful for planning unless deleted earlier; contact us about deletion.</p>
 
-  <h2>Share Extension</h2>
-  <p>The Heirloom share extension allows you to import content (photos, text, links) from other apps on your device into the app. Content shared through this extension is stored locally on your device and is not transmitted to any external service.</p>
+<p>Legacy invitation links and short codes can use a public CloudKit registry containing invitation routing information, such as the family display name, creator&#x27;s CloudKit identifier, share links, zone references, invitation dates, status and usage counts. These are not memory or media records. Public-database records are developer-accessible and may be readable by other app clients according to the configured CloudKit permissions. Native CloudKit sharing still determines who can access the linked journals. Do not treat a family display name or an invitation code as secret personal storage.</p>
 
-  <h2>Camera and Photo Library</h2>
-  <p>Heirloom requests access to your camera and photo library solely to allow you to capture and import photos into your memories. We do not transmit these images anywhere.</p>
+<h2>Shared Journals And Exported Copies</h2>
 
-  <h2>Notifications</h2>
-  <p>If you enable reminders or notifications, scheduling is performed entirely on-device using Apple's local notification system. We do not process notification data externally.</p>
+<p>Shared child journals contain the content authorized for that journal. Locked memories are excluded from child sharing, and accepting a journal does not by itself expose the owner&#x27;s private Recipe Box or full private family tree. Existing public invitation links provide their disclosed access to anyone able to use the link; named invitations are restricted to the invited iCloud accounts. The journal owner manages access, and permissions determine what participants can change.</p>
 
-  <h2>Children's Privacy</h2>
-  <p>Heirloom is designed to help families preserve memories about children. We do not knowingly collect any data from children, nor do we collect any data at all through our own servers.</p>
+<p>When you export or send a memory, book, backup or other file, the recipient or destination service receives the selected content. Copies already saved or forwarded outside Heirloom cannot be recalled by revoking journal access. Review the contents before sharing. Destination services have their own privacy policies.</p>
 
-  <h2>Contact</h2>
-  <p>If you have questions about privacy, please contact us at <a href="mailto:hello@theunchartedco.studio">hello@theunchartedco.studio</a>. We are happy to assist.</p>
+<h2>Upcoming App Update — Not Yet Released</h2>
+<p>Household-tree publication has a separate review and explicit approval covering structural person and relationship fields. Private notes, contact details, photos and face descriptors are not included in that household projection. Recipe-copy sharing creates an independent private import rather than a live shared Recipe Box. A shared household Recipe Box is not yet available.</p>
 
-  <p>This policy may be updated from time to time. Continued use of the app constitutes acceptance of the current policy.</p>
+<h2>Face Matching, Speech And Maps</h2>
 
-  <h3>In-App Purchases &amp; Premium</h3>
+<p>Family-photo matching runs on your device using saved family-member reference photos and mathematical face descriptors. These references are part of your stored private app data and can be included in your private iCloud synchronization and backups. They are not sent to an external face-recognition service or included in household-tree records. Removing the reference photo clears the associated enrollment in the profile editor; previously exported backups or copies are separate. Matching can be wrong; you can review and change suggested tags. This feature does not authenticate your identity.</p>
 
-  <h2>Purchase Options</h2>
-  <p>Heirloom offers optional premium features through the Apple App Store. Three purchase options are available: a monthly subscription, an annual subscription, and a one-time lifetime purchase. Premium features may include unlimited family tree members, CDC growth chart percentiles, heirloom book generation, and other capabilities as described within the App.</p>
+<p>If you choose audio transcription, Apple&#x27;s Speech service may process audio on Apple&#x27;s servers; the current app does not require on-device-only transcription. Maps, address/place searches and reverse geocoding use Apple services and may send the search text or relevant location to Apple. Manual location selection does not require permission to read your current GPS location. Apple&#x27;s policies govern its service processing.</p>
 
-  <h2>Subscriptions</h2>
-  <p>Monthly and annual subscriptions grant access to all current and future Pro features for the duration of the subscription. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. You can manage or cancel your subscription at any time through your Apple ID account settings.</p>
+<h2>Reminders, Diagnostics And Deletion</h2>
 
-  <h2>Lifetime Purchase</h2>
-  <p>The lifetime purchase is a one-time payment that grants permanent access to all Pro features available at the time of purchase. New features added after your purchase date may be made available to subscription holders first and are not automatically included in the lifetime purchase.</p>
+<p>Personal reminders are scheduled on your device. Apple push notifications may also signal iCloud changes so the app can refresh shared content. Heirloom keeps local operational diagnostics; if you deliberately export diagnostics or send them to support, review them before sending.</p>
 
-  <h2>Billing</h2>
-  <p>All purchases are processed by Apple through the App Store. The Developer does not have access to your payment information. All billing inquiries, refund requests, and subscription management should be directed to Apple through your App Store account settings.</p>
+<p>You can delete content using Heirloom&#x27;s controls and manage synchronized data using the available in-app and Apple account tools. Removing the app does not necessarily delete iCloud content, recovery copies or files already shared elsewhere. Separate saved exports remain under the control of their holder. Contact hello@theunchartedco.studio for questions about developer-accessible roadmap or invitation records and deletion requests.</p>
 
-  <h2>Refunds</h2>
-  <p>Refund requests are handled by Apple in accordance with the App Store refund policy. The Developer cannot process refunds directly. To request a refund, visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<h2>Purchases</h2>
 
-  <h2>Offer Codes</h2>
-  <p>The Developer may issue offer codes or promotional codes that unlock premium features. These codes are single-use and non-transferable. The Developer reserves the right to modify or revoke offer codes at any time.</p>
+<p>Apple processes purchases and manages billing. Eligible customers may receive the introductory free trial configured for their selected recurring subscription; the App Store purchase sheet shows the applicable offer and renewal terms. Monthly and Annual currently have a one-week free introductory offer configured. Lifetime is a one-time purchase and has no recurring trial. Subscription expiry changes access to applicable paid capabilities, not ownership of previously saved memories.</p>
 
-  <h2>Future Changes</h2>
-  <p>The Developer reserves the right to add, modify, or remove features associated with premium access. Existing purchasers will be notified of material changes to what their purchase includes.</p>
+<p><br>DEVICE PERMISSIONS<br>Heirloom may request access to your camera, photo library, microphone, speech recognition, contacts, location, notifications, or Face ID when needed for a feature you choose. Granting a permission does not itself send information to The Uncharted Co. Saved content and Apple service processing are described above.</p>
 
-  <footer>&copy; The Uncharted Co. All rights reserved.</footer>
+<h2>Children&#x27;S Privacy</h2>
+<p>Heirloom is intended for parents, guardians, and other adults preserving family memories; it is not directed to children. We do not knowingly collect personal information directly from children. Adults should not include information about a child or other sensitive information in Roadmap feature requests.</p>
 
-</div>
+<h2>Contact</h2>
+<p>If you have questions about privacy, please contact us at hello@theunchartedco.studio. We are happy to assist.</p>
+
+<h2>Changes To This Policy</h2>
+<p>We may update this policy as Heirloom changes. We will revise the effective date when we do. Material changes will be communicated through the App or another appropriate channel.</p>
+<footer>© 2026 The Uncharted Co. All rights reserved.</footer>
+</main>
 </body>
 </html>
