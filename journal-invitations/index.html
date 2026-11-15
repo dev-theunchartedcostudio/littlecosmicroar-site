@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; connect-src 'none'">
+<title>Heirloom invitation</title>
+<meta name="description" content="Open Heirloom to review your family invitation.">
+<style>
+:root{color-scheme:light dark;font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f8f6f1;color:#20242b}
+body{margin:0}main{max-width:520px;margin:10vh auto;padding:32px;border:1px solid #dcded9;border-radius:24px;background:#fff}
+h1{font-size:2rem;line-height:1.2}p{color:#626a75}.button{display:inline-block;padding:12px 22px;border-radius:24px;background:#2f7657;color:white;text-decoration:none;font-weight:650}
+a{color:#2f7657}a:focus-visible{outline:3px solid #1d66d1;outline-offset:4px}[hidden]{display:none!important}
+@media(max-width:600px){main{margin:24px 12px;padding:24px}}
+@media(prefers-color-scheme:dark){:root{background:#10141c;color:#f4f5f6}main{background:#171d27;border-color:#303846}p{color:#b6bdc8}a{color:#8bd0a7}.button{color:white}}
+</style>
+</head>
+<body><main>
+<p>The Uncharted Co.</p><h1>You're invited to Heirloom</h1>
+<p id="status">Open Heirloom to review and accept your invitation.</p>
+<a id="open" class="button" hidden>Open Heirloom</a>
+<p>Use the device where Heirloom is installed and sign in to your invited Apple Account. Nothing is joined until you accept in the app.</p>
+<p>If Heirloom isn't installed, install it first, then return to this invitation.</p>
+<p><a href="/support/">Heirloom support</a></p>
+<noscript><p>Open the original invitation on a device with Heirloom installed, or enable JavaScript to use the Open Heirloom button.</p></noscript>
+</main>
+<script>
+(() => {
+  const status = document.getElementById("status");
+  const open = document.getElementById("open");
+  try {
+    if (location.search || location.hash.length > 180000) throw Error();
+    const parameters = new URLSearchParams(location.hash.slice(1));
+    if ([...parameters].length !== 2 || parameters.getAll("v").length !== 1 ||
+        parameters.get("v") !== "1" || parameters.getAll("payload").length !== 1) throw Error();
+    const payload = parameters.get("payload");
+    if (!payload || payload.length > 174764 || !/^[A-Za-z0-9_-]+$/.test(payload)) throw Error();
+    const bytes = atob(payload.replace(/-/g,"+").replace(/_/g,"/") + "=".repeat((4-payload.length%4)%4));
+    if (bytes.length > 131072) throw Error();
+    const value = JSON.parse(new TextDecoder("utf-8",{fatal:true}).decode(Uint8Array.from(bytes,c=>c.charCodeAt(0))));
+    if (![1,2].includes(value.version) || !Array.isArray(value.entries) ||
+        value.entries.length < 1 || value.entries.length > (value.version === 1 ? 20 : 22)) throw Error();
+    open.href = "lcrapp://journal-invitations?v=1&payload=" + payload;
+    open.hidden = false;
+  } catch {
+    status.textContent = "This invitation is missing or invalid. Ask the sender for a fresh Heirloom invitation.";
+  }
+})();
+</script>
+</body></html>
